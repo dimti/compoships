@@ -45,7 +45,7 @@ trait HasRelationships
      *
      * @return \Awobaz\Compoships\Database\Eloquent\Relations\HasOne
      */
-    public function hasOne($related, $foreignKey = null, $localKey = null)
+    public function hasOne($related, $foreignKey = null, $localKey = null, $relationName = null)
     {
         if (is_array($foreignKey)) { //Check for multi-columns relationship
             $this->validateRelatedModel($related);
@@ -113,7 +113,7 @@ trait HasRelationships
      *
      * @return \Awobaz\Compoships\Database\Eloquent\Relations\HasMany
      */
-    public function hasMany($related, $foreignKey = null, $localKey = null)
+    public function hasMany($related, $foreignKey = null, $localKey = null, $relationName = null)
     {
         if (is_array($foreignKey)) { //Check for multi-columns relationship
             $this->validateRelatedModel($related);
